@@ -1,0 +1,22 @@
+// 1. 하드웨어 설정
+const int ledPin = 8; // LED가 연결될 디지털 핀 번호 할당
+
+void setup() {
+  // 2. 핀 모드 및 통신 설정
+  pinMode(ledPin, OUTPUT); // ledPin을 출력 모드로 설정
+  
+  Serial.begin(9600);      // 디버깅을 위한 시리얼 통신 시작 (보드레이트 9600)
+  Serial.println("System Initialized: LED Control Started");
+}
+
+void loop() {
+  // 3. LED ON 동작
+  digitalWrite(ledPin, HIGH);  // 핀에 5V(HIGH) 출력
+  Serial.println("LED State: ON");
+  delay(1000);                 // 1000ms(1초) 대기
+
+  // 4. LED OFF 동작
+  digitalWrite(ledPin, LOW);   // 핀에 0V(LOW) 출력
+  Serial.println("LED State: OFF");
+  delay(1000);                 // 1000ms(1초) 대기
+}
